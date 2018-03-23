@@ -1,0 +1,68 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+   <constant name="struts.action.excludePattern" value="/YourServlet"/>
+   <package name = "shopping" extends = "struts-default">
+	 	 
+	 	 	 	 
+	 <action name = "changeContent">
+        <result >/admin_changeContent.jsp</result>
+      </action>     
+      <action name = "checkPage">
+        <result >/admin_checkPage.jsp</result>
+      </action>
+          
+          
+      <action name = "addPopup">
+        <result >/admin_Add.jsp</result>
+      </action>     
+      <action name = "addSelectbox">
+        <result >/admin_add1.jsp</result>
+      </action>     
+      <action name = "addData"
+      	 class = "shopping3.adminAdd" 
+         method = "execute">
+	     <result name = "success" type="redirect">
+	     	<param name="type">${type}</param>
+	     	<param name = "location">/admin.jsp</param >	     	
+	     </result>	
+	     <result name = "error">/error.jsp</result>
+      </action>
+      
+      
+      <action name = "editPopup">
+        <result >/admin_edit1.jsp</result>
+      </action>      
+      <action name = "editData"
+      	 class = "shopping3.adminEdit" 
+         method = "execute">
+	     <result name = "success" type="redirect">
+	     	<param name="type">${type}</param>
+	     	<param name = "location">/admin.jsp</param >	     	
+	     </result>	
+	     <result name = "error">/error.jsp</result>
+      </action>
+      
+      
+      <action name = "deletePopup">
+        <result >/admin_delete1.jsp</result>
+      </action>      
+      <action name = "deleteData"
+      	 class = "shopping3.adminDelete" 
+         method = "execute">
+	     <result name = "success" type="redirect">
+	     	<param name="type">${type}</param>
+	     	<param name = "location">/admin.jsp</param >	     	
+	     </result>	
+	     <result name = "error">/error.jsp</result>
+      </action>
+      
+      
+      <action name = "searchOption">
+        <result >/admin_searchOptions.jsp</result>
+      </action>
+   </package>
+</struts>
